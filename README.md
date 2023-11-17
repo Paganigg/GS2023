@@ -1,11 +1,15 @@
 # GS Python - 2023.2
 ---
 
-### Ideia
+## Ideia
 Programa para cadastrar pacientes em uma clínica.
 
-#### Backend
+### Backend
 - API que faz operações de CRUD em um arquivo JSON contendo os registros dos pacientes.
 
-#### Frontend
+### Frontend
 - Telas feitas em TkInter que manda pedidos para a API e mostra as informações na tela.
+
+## Imports
+`pip install tk`
+`pip install flask`
