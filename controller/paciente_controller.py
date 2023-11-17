@@ -1,5 +1,9 @@
-from model import paciente
+from repository.paciente_repository import get, registrar
 
 
-def get_paciente(id):
-    pass
+def get_pacientes():
+    return get()
+
+
+def registrar_paciente(paciente):
+    registrar(paciente)
