@@ -1,11 +1,12 @@
 import json
 from model import medico
+MEDICOS = "repository\medicos.json"
 
 
-def get_medicos() -> list: 
+def get() -> list: 
     try:
-        with open ("medicos.json","r", enconding = "utf-8") as arquivo_medicos: 
-            medicos = json.loads(arquivo_medicos) 
+        with open (MEDICOS,"r", encoding = "utf-8") as arquivo_medicos: 
+            medicos = json.load(arquivo_medicos)
             return medicos
     except FileNotFoundError:
         print ("Arquivo não encontrado")
@@ -15,9 +16,17 @@ def get_medicos() -> list:
         return []
 
 
-def registrar_medico(medico) -> None:
-    pass
+def registrar(medico) -> None:
+    medicos = get()
+    medicos.append(medico)
+    try:
+        with open (MEDICOS,"w+", encoding = "utf-8") as arquivo_medicos: 
+            json.dump(medicos, arquivo_medicos, indent=4)
+    except FileNotFoundError:
+        print ("Arquivo não encontrado")
+    except:
+        print ("Erro desconhecido")
 
 
-def editar_medico(medico) -> None:
+def editar(medico) -> None:
     pass
