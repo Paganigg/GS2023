@@ -1,4 +1,5 @@
-from repository.paciente_repository import get, registrar
+from repository.paciente_repository import get, registrar, editar
+from .validator import validar_keys
 
 
 def get_pacientes() -> list:
@@ -22,3 +23,13 @@ def registrar_paciente(paciente: dict) -> None:
         None
     """
     registrar(paciente)
+
+
+def editar_paciente(paciente: dict) -> bool:
+    if not validar_keys:
+        return False
+    
+    return editar(paciente)
+     
+    
+
