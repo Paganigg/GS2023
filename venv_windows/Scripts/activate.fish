@@ -58,7 +58,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV 'C:\Users\guilh\OneDrive\Área de Trabalho\GS2023\GS2023'
+set -gx VIRTUAL_ENV 'D:\Programação\Git\GS2023\venv_windows'
 
 # https://github.com/fish-shell/fish-shell/issues/436 altered PATH handling
 if test (echo $FISH_VERSION | head -c 1) -lt 3

@@ -32,7 +32,7 @@ export-env {
       }
     }
 
-    let virtual_env = 'C:\Users\guilh\OneDrive\Área de Trabalho\GS2023\GS2023'
+    let virtual_env = 'D:\Programação\Git\GS2023\venv_windows'
     let bin = 'Scripts'
 
     let is_windows = ($nu.os-info.family) == 'windows'

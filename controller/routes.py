@@ -7,17 +7,6 @@ import controller.medico_controller
 app = Flask(__name__)  
 
 
-@app.route("/")
-def index():
-    """
-    Endpoint para a página inicial.
-
-    Retorna:
-        str: Uma mensagem simples que identifica a página.
-    """
-    return "Index Page" 
-
-
 @app.route("/pacientes", methods=['GET']) 
 def pacientes():
     """
