@@ -89,8 +89,11 @@ def registro_medico():
 @app.route("/editar_medico", methods=['PUT'])
 def edita_medico():
     """
-    
-    
+    Endpoint para editar um médico já existente.
+
+    Retorna:
+        Response: Resposta JSON que ecoa os dados registrados.
+        TODO: Alterar o retorno.
     """
     if request.method == 'PUT':
         medico = request.get_json()
