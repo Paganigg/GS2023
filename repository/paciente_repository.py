@@ -1,6 +1,5 @@
 import json
 
-
 PACIENTES = "pacientes.json"
 
 
@@ -66,6 +65,7 @@ def editar(paciente: dict) -> bool:
             break
         else:
             continue
+        
         return False
 
     try:

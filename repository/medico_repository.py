@@ -1,5 +1,4 @@
 import json
-from model import medico
 
 MEDICOS = "medicos.json"
 
@@ -23,7 +22,7 @@ def get() -> list:
         return []
 
 
-def registrar(medico) -> None:
+def registrar(medico: dict) -> None:
     """
     Registra um novo médico no arquivo JSON.
 
@@ -35,6 +34,7 @@ def registrar(medico) -> None:
     """
     medicos = get()
     medicos.append(medico)
+
     try:
         with open(MEDICOS, "w+", encoding="utf-8") as arquivo_medicos: 
             json.dump(medicos, arquivo_medicos, indent=4)
@@ -44,7 +44,7 @@ def registrar(medico) -> None:
         print("Erro desconhecido")
 
 
-def editar(medico) -> None:
+def editar(medico: dict) -> bool:
     """
     Edita as informações de um médico (TODO).
 
@@ -54,4 +54,25 @@ def editar(medico) -> None:
     Retorna:
         None
     """
-    pass
+    id = medico["id"]
+    medicos = get()
+
+    for i in medicos:
+        if i["id"] == id:
+            n_medico = medico.copy()
+            indice = medicos.index(i)
+            medicos[indice] = n_medico
+            break
+        else: 
+            continue
+        return False
+    
+    try:
+        with open(MEDICOS, "w+", encoding="utf-8") as arquivo_medicos: 
+            json.dump(medicos, arquivo_medicos, indent=4)
+    except FileNotFoundError:
+        print("Arquivo não encontrado")
+    except:
+        print("Erro desconhecido")
+
+    return True

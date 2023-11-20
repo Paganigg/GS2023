@@ -1,4 +1,4 @@
-model = {
+paciente_model = {
     "id": int(),
     "nome": str(),
     "cpf": str(),

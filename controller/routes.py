@@ -2,7 +2,7 @@ from flask import *
 from .medico_controller import get_medicos, registrar_medico
 from .paciente_controller import get_pacientes, registrar_paciente
 import controller.paciente_controller
-
+import controller.medico_controller
 
 app = Flask(__name__)  
 
@@ -47,6 +47,12 @@ def registro():
 
 @app.route("/editar_paciente", methods=['PUT'])
 def edita_paciente():
+    """
+    Endpoint para edição de um paciente existente.
+    
+    Retorna:
+        Response: Resposta JSON que modifica os dados já registrados
+    """
     if request.method == 'PUT':
         paciente = request.get_json()
         controller.paciente_controller.editar_paciente(paciente)
@@ -79,3 +85,14 @@ def registro_medico():
         registrar_medico(medico)
         return jsonify(medico)
     
+
+@app.route("/editar_medico", methods=['PUT'])
+def edita_medico():
+    """
+    
+    
+    """
+    if request.method == 'PUT':
+        medico = request.get_json()
+        controller.medico_controller.editar_medico(medico)
+        return jsonify(medico)

@@ -1,5 +1,6 @@
-from repository.medico_repository import get, registrar
-
+from repository.medico_repository import get, registrar, editar
+from .validator import validar_keys
+from model.medico import medico_model
 
 def get_medicos() -> list:
     """
@@ -22,3 +23,10 @@ def registrar_medico(medico: dict) -> None:
         None
     """
     registrar(medico)
+
+
+def editar_medico(medico: dict) -> bool:
+    if not validar_keys(medico, medico_model):
+        return False
+    
+    return editar(medico)
