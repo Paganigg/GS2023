@@ -1,4 +1,4 @@
-@set "VIRTUAL_ENV=C:\Users\guilh\OneDrive\Área de Trabalho\GS2023\GS2023"
+@set "VIRTUAL_ENV=D:\Programação\Git\GS2023\venv_windows"
 
 @set "VIRTUAL_ENV_PROMPT="
 @if NOT DEFINED VIRTUAL_ENV_PROMPT (
