@@ -1,22 +1,40 @@
-from tkinter import ttk
-from tkinter import Tk
 from tkinter import *
 
+LARGURA = 40
+COLUNA_1 = 1
+COLUNA_2 = 3
 
 root = Tk()
-root.geometry("1920x1080")
-frm = ttk.Frame(root, padding=10)
+root.title("Global Solution 2023")
+largura_da_tela = root.winfo_screenwidth()
+altura_da_tela = root.winfo_screenheight()
+RESOLUCAO = f"{largura_da_tela}x{altura_da_tela}"
+root.geometry(RESOLUCAO)
+
+frm = Frame(root)
 frm.grid()
 
+def open():
+    top = Toplevel()
+    top.geometry(RESOLUCAO)
+    top.title("Registro médico")
+    Button(top, text= "Sair", width= LARGURA, command=top.destroy).pack(pady=520)
 
-ttk.Button(frm, text = "Registrar médico",  width = 30).grid(column=10, row = 1)
-ttk.Button(frm, text = "Edição de dados médico",  width = 30).grid(column=10, row = 2)
-ttk.Button(frm, text = "Visualização de dados médico",  width = 30).grid(column=10, row = 3)
+botao1 = Button(frm, text = "Registrar médico",  width = LARGURA, height = 5, command = open).grid(column=COLUNA_1, row = 1)
+botao2 = Button(frm, text = "Edição de dados médico",  width = LARGURA, command = open).grid(column=COLUNA_1, row = 2)
+botao3 = Button(frm, text = "Visualização de dados médico",  width = LARGURA, command = open).grid(column=COLUNA_1, row = 3)
 
-ttk.Button(frm, text = "Registrar paciente",  width = 30).grid(column=30, row = 1)
-ttk.Button(frm, text = "Edição de dados paciente", width = 30).grid(column=30, row = 2)
-ttk.Button(frm, text = "Visualização de dados paciente", width = 30).grid(column=30, row = 3)
+def open():
+    top = Toplevel()
+    top.geometry(RESOLUCAO)
+    top.title("Registro Paciente")
+    Button(top, text= "Sair", width= LARGURA, command=top.destroy).pack(pady=520)
 
-ttk.Button(frm, text = "Sair", width = 30 ,command=root.destroy).grid(column=20, row = 4)
+
+botao4 = Button(frm, text = "Registrar paciente",  width = LARGURA, command = open).grid(column=COLUNA_2, row = 1)
+botao5 = Button(frm, text = "Edição de dados paciente", width = LARGURA, command = open).grid(column=COLUNA_2, row = 2)
+botao6 = Button(frm, text = "Visualização de dados paciente", width = LARGURA, command = open).grid(column=COLUNA_2, row = 3)
+
+botao7 = Button(frm, text = "Sair", width = LARGURA,command=root.destroy).grid(column = 2, row = 4)
 
 root.mainloop()
