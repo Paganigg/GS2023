@@ -7,5 +7,4 @@ paciente_model = {
     "email": str(),
     "endereco": str(),
     "diagnostico": str(),
-    "id_medico": int(),
 }

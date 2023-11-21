@@ -1,6 +1,6 @@
 from model.medico import medico_model
 from model.paciente import paciente_model
-from view.pasta_medico import medicos_menu
+from view import menu
 
 while True:
     '''
@@ -20,19 +20,23 @@ while True:
 
     match escolha:
         case "1":
-            medicos_menu.criar_registro(medico_model)
+            menu.criar_registro(medico_model)
+            print('Médico cadastrado')
 
         case "2":
-            pass
+            menu.editar(medico_model)
+            print("Médico editado")
 
         case "3":
             pass
 
         case "4":
-            medicos_menu.criar_registro(paciente_model)
+            menu.criar_registro(paciente_model)
+            print("Paciente cadastrado")
 
         case "5":
-            pass
+            menu.editar(paciente_model)
+            print("Paciente editado")
 
         case "6":
             pass
