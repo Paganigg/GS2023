@@ -2,14 +2,14 @@
 ---
 
 ## Ideia
-Programa para cadastrar pacientes em uma clínica.
+Programa para cadastrar médicos e pacientes em uma clínica.
 
 ### Backend
 - API que faz operações de CRUD em um arquivo JSON contendo os registros dos pacientes.
 
 ### Frontend
-- Telas feitas em TkInter que manda pedidos para a API e mostra as informações na tela.
+- Telas feitas em linha de texto que manda pedidos para a API e mostra as informações na tela.
 
 ## Imports
-`pip install tk`
+`pip install requests`
 `pip install flask`

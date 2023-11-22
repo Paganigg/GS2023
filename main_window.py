@@ -1,20 +1,12 @@
+import requests
 from model.medico import medico_model
 from model.paciente import paciente_model
 from view import menu
 
+API = "http://localhost:5000"
+
 while True:
-    '''
-    Projeto Global Solution 2023
-    
-    1 - Registrar um médico
-    2 - Editar médico
-    3 - Visualizar médicos
-    4 - Registrar Paciente
-    5 - Editar paciente
-    6 - Visualizar pacientes
-    0 - Sair
-    
-    '''
+    menu.print_menu()
 
     escolha = input('Escolha: ')
 
@@ -28,7 +20,8 @@ while True:
             print("Médico editado")
 
         case "3":
-            pass
+            medicos = requests.get(f"{API}/medicos").json()
+            menu.visualizar(medicos)
 
         case "4":
             menu.criar_registro(paciente_model)
@@ -39,7 +32,8 @@ while True:
             print("Paciente editado")
 
         case "6":
-            pass
+            pacientes = requests.get(f"{API}/pacientes").json()
+            menu.visualizar(pacientes)
 
         case "0":
             break
