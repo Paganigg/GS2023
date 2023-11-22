@@ -20,7 +20,7 @@ def criar_registro(modelo: dict) -> dict:
         while type(v) != int and (v == '' or v.isspace()):
             v = input(f"{k.capitalize()}: ").capitalize()
             novo_registro[k] = v
-            
+
             if v == '':
                 print("Campo em branco, digite algo!")
 
@@ -31,9 +31,9 @@ def criar_registro(modelo: dict) -> dict:
 
 
 def editar(modelo: dict) -> dict:
-    edicao = input('Digite o id da pessoa que deseja editar: ')
+    id = int(input('Digite o id da pessoa que deseja editar: '))
     novo = criar_registro(modelo)
-    novo['id'] = edicao
+    novo['id'] = id
 
     return novo
 
