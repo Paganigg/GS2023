@@ -1,15 +1,26 @@
 # GS Python - 2023.2
 ---
+# Integrantes:
+- Rm: 99471                     [Leonardo Garcia Melo](https://github.com/LeonardoGarciaMelo)
+- Rm: 99445                     [Guilherme Moraes Pagani](https://github.com/Paganigg)
+- Rm: 550451                    [Kauê Miziara](https://github.com/KaueMiziara)
 
-## Ideia
-Programa para cadastrar médicos e pacientes em uma clínica.
+### Link do Github:
+[Github do projeto](https://github.com/Paganigg/GS2023)
 
-### Backend
-- API que faz operações de CRUD em um arquivo JSON contendo os registros dos pacientes.
+## Explicação
+A ideia do nosso projeto é criar uma aplicação em python que use uma API para registrar médicos e 
+pacientes em uma clínica.
 
-### Frontend
-- Telas feitas em linha de texto que manda pedidos para a API e mostra as informações na tela.
+## Execução
+A API foi criar pelo nosso grupo, portanto, é necessário rodar ela, para abrir o servidor.
 
+- Execute "api.py" em um terminal
+- - ```python api.py```
+- Execute o arquivo "main.py" em um terminal diferente 
+- - ```python main.py```
 ## Imports
-`pip install requests`
-`pip install flask`
+caso a venv não funcione, esses são os imports necessários <br>
+- `pip install requests`
+- `pip install flask` 
+
