@@ -31,19 +31,29 @@ while True:
             menu.visualizar(medicos)
 
         case "4":
+            id = int(input("Digite o ID do médico a ser encontrado: "))
+            medico = requests.get(f"{API}/medico/{id}").json()
+            menu.visualizar_dicionario(medico)
+
+        case "5":
             novo_paciente = menu.criar_registro(paciente_model)
             requests.post(f"{API}/registrar_paciente", data=json.dumps(novo_paciente), headers=HEADERS)
             print('Paciente cadastrado')
 
-        case "5":
+        case "6":
             editar_paciente = menu.editar(paciente_model)
             requests.put(f"{API}/editar_paciente", data=json.dumps(editar_paciente), headers=HEADERS)
             print("Paciente editado")
 
-        case "6":
+        case "7":
             pacientes = requests.get(f"{API}/pacientes").json()
             menu.visualizar(pacientes)
 
+        case "8":
+            id = int(input("Digite o ID do paciente a ser encontrado: "))
+            paciente = requests.get(f"{API}/paciente/{id}").json()
+            menu.visualizar_dicionario(paciente)
+            
         case "0":
             break
 

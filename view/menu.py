@@ -7,9 +7,11 @@ def print_menu():
     1 - Registrar um médico
     2 - Editar médico
     3 - Visualizar médicos
-    4 - Registrar Paciente
-    5 - Editar paciente
-    6 - Visualizar pacientes
+    4 - Encontrar médico pelo ID      
+    5 - Registrar Paciente
+    6 - Editar paciente
+    7 - Visualizar pacientes
+    8 - Encontrar paciente pelo ID     
     0 - Sair
     ''')
 
@@ -42,6 +44,11 @@ def visualizar_elemento(dicionario: dict):
     print(f"id = {dicionario['id']}")
     print(f"Nome = {dicionario['nome']}")
     print(f"Email = {dicionario['email']}")
+
+
+def visualizar_dicionario(dicionario: dict):
+    for k,v in dicionario.items():
+        print(f'{k} = {v}')
 
 
 def visualizar(lista: list):
