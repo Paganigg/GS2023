@@ -1,4 +1,4 @@
-from repository.medico_repository import get, registrar, editar
+from repository.medico_repository import get, registrar, editar, get_by_id
 from .validator import validar_keys
 from model.medico import medico_model
 
@@ -10,6 +10,10 @@ def get_medicos() -> list:
         list: Lista de médicos.
     """
     return get()
+
+
+def get_medico_by_id(id: int) -> dict:
+    return get_by_id(id)
 
 
 def registrar_medico(medico: dict) -> None:
