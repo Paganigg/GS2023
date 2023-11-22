@@ -1,6 +1,6 @@
 from flask import * 
 from .medico_controller import get_medicos, registrar_medico, get_medico_by_id
-from .paciente_controller import get_pacientes, registrar_paciente
+from .paciente_controller import get_pacientes, registrar_paciente, get_paciente_by_id
 import controller.paciente_controller
 import controller.medico_controller
 
@@ -91,6 +91,12 @@ def edita_medico():
 
 
 @app.route("/medico/<id>", methods=['GET'])
-def get_medico(id):
+def get_medico(id: int):
     if request.method == 'GET':
-        return jsonify(get_medico_by_id(id))
+        return jsonify(get_medico_by_id(int(id)))
+
+
+@app.route("/paciente/<id>", methods=['GET'])
+def get_paciente(id: int):
+    if request.method == 'GET':
+        return jsonify(get_paciente_by_id(int(id)))
