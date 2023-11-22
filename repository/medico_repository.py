@@ -22,6 +22,15 @@ def get() -> list:
         return []
 
 
+def get_by_id(id: int) -> dict:
+    medicos = get()
+
+    for i in medicos:
+        if i["id"] == id:
+            return i
+    return {"Erro": "ID não encontrado"}
+    
+
 def registrar(medico: dict) -> None:
     """
     Registra um novo médico no arquivo JSON.
@@ -76,3 +85,4 @@ def editar(medico: dict) -> bool:
         print("Erro desconhecido")
 
     return True
+
