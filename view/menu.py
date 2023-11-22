@@ -1,3 +1,5 @@
+import random
+
 def print_menu():
     print('''
     Projeto Global Solution 2023
@@ -14,11 +16,16 @@ def print_menu():
 
 def criar_registro(modelo: dict) -> dict:
     novo_registro = modelo.copy()
-    for k,v in novo_registro.items():
+    for k, v in novo_registro.items():
         while type(v) != int and (v == '' or v.isspace()):
             v = input(f"{k.capitalize()}: ").capitalize()
+            novo_registro[k] = v
+            
             if v == '':
                 print("Campo em branco, digite algo!")
+
+    id = random.randrange(0, 100000)
+    novo_registro['id'] = id
 
     return novo_registro
 
