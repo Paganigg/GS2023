@@ -38,5 +38,13 @@ def editar(modelo: dict) -> dict:
     return novo
 
 
+def visualizar_elemento(dicionario: dict):
+    print(f"id = {dicionario['id']}")
+    print(f"Nome = {dicionario['nome']}")
+    print(f"Email = {dicionario['email']}")
+
+
 def visualizar(lista: list):
-    print(lista)
+    for e in lista:
+        print()
+        visualizar_elemento(e)
