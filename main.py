@@ -33,6 +33,8 @@ while True:
         case "3":
             medicos = requests.get(f"{API}/medicos").json()
             menu.visualizar(medicos)
+            if medicos == []:
+                print("Nenhum registro encontrado")
 
         case "4":
             id = int(input("Digite o ID do médico a ser encontrado: "))
@@ -56,6 +58,8 @@ while True:
         case "7":
             pacientes = requests.get(f"{API}/pacientes").json()
             menu.visualizar(pacientes)
+            if pacientes == []:
+                print("Nenhum registro encontrado")
 
         case "8":
             id = int(input("Digite o ID do paciente a ser encontrado: "))
