@@ -53,28 +53,30 @@ def registrar(medico: dict) -> None:
         print("Erro desconhecido")
 
 
-def editar(medico: dict) -> bool:
+def editar(medico: dict) -> int:
     """
-    Edita as informações de um médico (TODO).
+    Edita as informações de um médico.
 
     Args:
         medico (dict): Médico a ter seus registros alterados.
 
     Retorna:
-        None
+        int
     """
     id = medico["id"]
     medicos = get()
 
+    medico_existe = False
     for i in medicos:
         if i["id"] == id:
             n_medico = medico.copy()
             indice = medicos.index(i)
             medicos[indice] = n_medico
+            medico_existe = True
             break
-        else: 
-            continue
-        return False
+
+    if not medico_existe:
+        return 400
     
     try:
         with open(MEDICOS, "w+", encoding="utf-8") as arquivo_medicos: 
@@ -84,5 +86,5 @@ def editar(medico: dict) -> bool:
     except:
         print("Erro desconhecido")
 
-    return True
+    return 200
 

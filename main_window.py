@@ -23,8 +23,12 @@ while True:
 
         case "2":
             editar_medico = menu.editar(medico_model)
-            requests.put(f"{API}/editar_medico", data=json.dumps(editar_medico), headers=HEADERS)
-            print("Médico editado")
+            response = requests.put(f"{API}/editar_medico", data=json.dumps(editar_medico), headers=HEADERS)
+
+            if response.status_code != 200:
+                print("ID inválido")
+            else:    
+                print("Médico editado")
 
         case "3":
             medicos = requests.get(f"{API}/medicos").json()
@@ -42,8 +46,12 @@ while True:
 
         case "6":
             editar_paciente = menu.editar(paciente_model)
-            requests.put(f"{API}/editar_paciente", data=json.dumps(editar_paciente), headers=HEADERS)
-            print("Paciente editado")
+            response = requests.put(f"{API}/editar_paciente", data=json.dumps(editar_paciente), headers=HEADERS)
+
+            if response.status_code != 200:
+                print("ID inválido")
+            else:
+                print("Paciente editado")
 
         case "7":
             pacientes = requests.get(f"{API}/pacientes").json()
@@ -59,3 +67,4 @@ while True:
 
         case _:
             print("Digite uma escolha válida")
+    input("Digite qualquer tecla para continuar: ")

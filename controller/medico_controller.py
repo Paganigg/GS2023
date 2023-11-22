@@ -29,7 +29,7 @@ def registrar_medico(medico: dict) -> None:
     registrar(medico)
 
 
-def editar_medico(medico: dict) -> bool:
+def editar_medico(medico: dict) -> int:
     """
     Edita um médico no repository.
 
@@ -37,9 +37,9 @@ def editar_medico(medico: dict) -> bool:
         medico (dict): Informações do médico a serem editadas.
     
     Retorna:
-        bool
+        int
     """
     if not validar_keys(medico, medico_model):
-        return False
+        return 400
     
     return editar(medico)

@@ -29,7 +29,7 @@ def registrar_paciente(paciente: dict) -> None:
     registrar(paciente)
 
 
-def editar_paciente(paciente: dict) -> bool:
+def editar_paciente(paciente: dict) -> int:
     """
     Edita um paciente no repository.
 
@@ -37,10 +37,10 @@ def editar_paciente(paciente: dict) -> bool:
         paciente (dict): Informações do paciente a serem editadas.
     
     Retorna:
-        bool
+        int
     """
     if not validar_keys(paciente, paciente_model):
-        return False
+        return 400
     
     return editar(paciente)
      

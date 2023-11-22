@@ -26,7 +26,6 @@ def registro():
 
     Retorna:
         Response: Resposta JSON que ecoa os dados registrados.
-        TODO: Alterar o retorno.
     """
     if request.method == 'POST':
         paciente = request.get_json()
@@ -44,8 +43,10 @@ def edita_paciente():
     """
     if request.method == 'PUT':
         paciente = request.get_json()
-        controller.paciente_controller.editar_paciente(paciente)
-        return jsonify(paciente)
+        status = controller.paciente_controller.editar_paciente(paciente)
+        resposta = Response(paciente, mimetype="application/json")
+        resposta.status_code = status
+        return resposta
     
 
 @app.route("/medicos", methods=['GET'])
@@ -67,7 +68,6 @@ def registro_medico():
 
     Retorna:
         Response: Resposta JSON que ecoa os dados registrados.
-        TODO: Alterar o retorno.
     """
     if request.method == 'POST':
         medico = request.get_json()
@@ -82,12 +82,13 @@ def edita_medico():
 
     Retorna:
         Response: Resposta JSON que ecoa os dados registrados.
-        TODO: Alterar o retorno.
     """
     if request.method == 'PUT':
         medico = request.get_json()
-        controller.medico_controller.editar_medico(medico)
-        return jsonify(medico)
+        status = controller.medico_controller.editar_medico(medico)
+        resposta = Response(medico, mimetype="application/json")
+        resposta.status_code = status
+        return resposta
 
 
 @app.route("/medico/<id>", methods=['GET'])
