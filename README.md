@@ -9,11 +9,11 @@
 [Github do projeto](https://github.com/Paganigg/GS2023)
 
 ## Explicação
-A ideia do nosso projeto é criar uma aplicação em python que use uma API para registrar médicos e 
-pacientes em uma clínica.
+A ideia do nosso projeto é criar uma aplicação em python que use uma API, criada pelo nosso próprio grupos para registrar médicos e pacientes em uma clínica e guardar esses registros dentro de um arquivo Json.<br>
+O usuário apenas precisa selecionar uma opção no menu para cadastrar ou visualizar um médico ou paciente. A API irá registrar todas as informações dentro do arquivo Json, de forma automática.
 
 ## Execução
-A API foi criar pelo nosso grupo, portanto, é necessário rodar ela, para abrir o servidor.
+A API foi criar pelo nosso grupo, portanto, é necessário rodar ela para abrir o servidor.
 
 - Execute "api.py" em um terminal
 - - ```python api.py```
